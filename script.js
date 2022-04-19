@@ -7,20 +7,15 @@ function show_letter()
 
   let ls_slot = $('#ls-slot');
 
-  ls_slot.text(ls);
+  ls_slot.text("<div id='drag'>" + ls + "</div>");
 }
 
 $(document).ready(function() {
   show_letter();
 
-  /*$('button').on('click', function() {
-    show_letter();
-  });*/
-
   $('button').on('click', function() {
-    $( "#drag" ).append(show_letter);
+    show_letter();
   });
-});
 
 
 
