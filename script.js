@@ -1,9 +1,76 @@
+// set up the letter set
+var lss = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','.',',',':',';','-','_'];
+
+function show_letter()
+{
+  let ls = lss[Math.floor(Math.random() * lss.length)];
+
+  let ls_slot = $('#ls-slot');
+
+  ls_slot.text(ls);
+}
+
+$(document).ready(function() {
+  show_letter();
+
+  /*$('button').on('click', function() {
+    show_letter();
+  });*/
+
+  $('button').on('click', function() {
+    $( "#drag" ).append(show_letter);
+  });
+});
+
+
+
+// random css
+
+function update_css(x, y, width)
+{
+  let nl = $('#drag');
+
+  nl.css({
+    left: x + 'px',
+    top: y  + 'px',
+	"--wdth": width
+  });
+}
+
+$(document).ready(function() {
+
+  $('button').click(function() {
+
+	$("#drag").css({
+		"display": "block"
+	});	
+
+    let width = randomNumber(100,200);
+
+    let x = randomNumber(10,innerWidth-100);
+    let y = randomNumber(10,innerHeight-100);
+
+    update_css(x, y, width);
+  });
+
+})
+
+
+
+
+
+function generateMixed(n) {
+     var res = "";
+     for(var i = 0; i < n ; i ++) {
+         var id = Math.ceil(Math.random()*26);
+         res += str[id];
+     }
+     return res;
+}
+
 $(document).ready(function(){
 
-	console.log('script loaded');
-
-	const wghtmax = 900;
-	const wdthmax = 150;
+	const wdthmax = 200;
 
 	//standard sliders
 	$('.axis-range').on('input', function(){
@@ -48,10 +115,6 @@ $(document).ready(function(){
 		});	
 	});
 
-	$('.pic').click (function(){
-		$("#mahjong").append("<div id='drag'><h2>K</h2></div>");
-	});
-
 	/*$('.pic').click (function appendText(){
 		var txt=$("<h2></h2>").text(res);
 		$("#drag").append(txt);
@@ -65,13 +128,3 @@ $(document).ready(function(){
 function randomNumber(min, max) { 
     return Math.floor(Math.random() * (max - min) + min);
 }
-
-/*var str = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-function generateMixed(n) {
-     var res = "";
-     for(var i = 0; i < n ; i ++) {
-         var id = Math.ceil(Math.random()*26);
-         res += str[id];
-     }
-     return res;
-}*/

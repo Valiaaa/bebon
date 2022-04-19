@@ -15,6 +15,7 @@
 	--wdth: 100;
 	--color: silver;
 }
+
 body{
 	font-family: 'Arial';
 	font-weight: 100;
@@ -25,6 +26,38 @@ body{
 	color:  var(--color);
 }
 
+/* dragable element style*/
+
+#drag {
+	position: absolute;
+	display: none;
+	border-radius: 8px;
+	border: 2px solid silver;
+	box-shadow: 5px 5px silver;
+	text-align: center;
+	padding: 10px;
+	font-family: 'Bebon';
+	font-variation-settings: 'wdth' var(--wdth);
+	line-height: 100%;
+	font-size: 6vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	--wdth: 100;
+  }
+
+/* button style*/
+
+button {
+	font-size: 4rem;
+	color:black;
+	border: solid 2px;
+	padding: 1rem;
+}
+button:hover {
+	background-color: black;
+	color:white;
+}
+  
 h1 {
 	font-family: Bebon;
 	font-variation-settings: 'wdth' var(--wdth);
@@ -37,6 +70,7 @@ h1 {
 #alphabet {
 	text-align: center;
 }
+
 .letter {
 	transition: font-variation-settings .3s ease-in, color .3s ease-in;
 	display: inline;
@@ -53,25 +87,6 @@ h1 {
 	background-color .3s ease-in, color .3s ease-in;
 	}
 
-h2 {
-	font-family: 'Bebon';
-	font-variation-settings: 'wdth' var(--wdth);
-	line-height: 100%;
-	font-size: 6vw;
-	font-weight: normal;
-	text-transform: uppercase;
-	--wdth: 100;
-}
-
-#drag {
-	position: absolute;
-	border-radius: 8px;
-	border: 2px solid silver;
-	box-shadow: 5px 5px silver;
-	text-align: center;
-	padding: 10px;
-  }
-
 .pic {
 	display: block;
 	margin-left: auto;
@@ -85,6 +100,7 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
   }
+
 .magmatic, .magmatic *{
 	font-variation-settings: 'wdth' var(--wdth);
 }
