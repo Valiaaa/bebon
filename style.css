@@ -1,0 +1,163 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: darkgreen;
+	cursor: url('hand.png') 10 10,auto;
+}
+
+@font-face {
+  font-family: 'Bebon';
+  src: url('BebonVF.woff') format('woff-variations');
+}
+
+:root{
+	--wdth: 100;
+	--color: silver;
+}
+body{
+	font-family: 'Arial';
+	font-weight: 100;
+	font-style: normal;
+	font-size: 30px;
+	line-height: 1.5;
+	margin-bottom: 4rem;
+	color:  var(--color);
+}
+
+h1 {
+	font-family: Bebon;
+	font-variation-settings: 'wdth' var(--wdth);
+	font-size: 8vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	--wdth: 100;
+	}
+
+#alphabet {
+	text-align: center;
+}
+.letter {
+	transition: font-variation-settings .3s ease-in, color .3s ease-in;
+	display: inline;
+	line-height: 100%;
+	margin-left: 0em;
+	margin-right: 0em;
+	text-align: center;
+}
+
+.letter:hover {
+	--wdth: 200;
+	color: rgb(255, 255, 255);
+	transition: font-variation-settings .3s ease-in,
+	background-color .3s ease-in, color .3s ease-in;
+	}
+
+h2 {
+	font-family: 'Bebon';
+	font-variation-settings: 'wdth' var(--wdth);
+	line-height: 100%;
+	font-size: 6vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	--wdth: 100;
+}
+
+#drag {
+	position: absolute;
+	border-radius: 8px;
+	border: 2px solid silver;
+	box-shadow: 5px 5px silver;
+	text-align: center;
+	padding: 10px;
+  }
+
+.pic {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 48vw;
+  }
+
+hr {
+	width:94vw;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+.magmatic, .magmatic *{
+	font-variation-settings: 'wdth' var(--wdth);
+}
+
+section{
+	margin: 3rem 0;
+}
+
+#mahjong {
+	display:inline;
+}
+
+#intro{
+	font-family: 'Bebon';
+	font-size:14vw;
+	line-height: 0.9;
+	text-align: center;
+}
+
+#content{
+	font-family: 'Bebon';
+	width: 33em;
+	height: 500px;
+	margin: auto;
+	font-weight: 100;
+}
+
+#content p{
+	transition: font-variation-settings 400ms ease-in-out;
+}
+
+/*SLIDER STYLES*/
+
+#sliders ul{
+	margin: auto;
+}
+#sliders li{
+	display: flex;
+	justify-content: center;
+}
+
+.range-name, .min, .max{
+	width: 100px;
+}
+.min{
+	text-align: right;
+}
+.range-name::after{
+	content: ': ';
+}
+
+input.axis-range{
+	width: 580px;
+	margin: 0 20px;
+}
+
+
+/*BUTTON STYLES*/
+
+#buttons{
+	text-align: center;
+}
+button{
+	font-family: 'Arial';
+	font-variation-settings: 'wdth' 100;
+	font-size: 1em;
+	background: white;
+	border-radius: 50%;
+	outline: none;
+	border: 2px solid black;
+	padding: 1em;
+}
+button:hover{
+	color: olivedrab;
+	/*cursor: pointer;*/
+}

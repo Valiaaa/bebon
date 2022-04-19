@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8"> 
+       	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bebon Display Page</title>
+       	<link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        
+    </head>
+    <body>
+        <br>
+        <img src="mahjong.png" alt="mahjong" class="pic">
+        <div id="mahjong">
+        <div id="drag">
+            <h2>O</h2>
+        </div>
+     </div>
+        <br><br><br>
+        <hr><br><br>
+    <div id="alphabet">
+        <h1 class="letter">A</h1>
+        <h1 class="letter">B</h1>
+        <h1 class="letter">C</h1>
+        <h1 class="letter">D</h1>
+        <h1 class="letter">E</h1>
+        <h1 class="letter">F</h1>
+        <h1 class="letter">G</h1>
+        <h1 class="letter">H</h1>
+        <h1 class="letter">I</h1>
+        <h1 class="letter">J</h1>
+        <h1 class="letter">K</h1>
+        <br>
+        <h1 class="letter">L</h1>
+        <h1 class="letter">M</h1>
+        <h1 class="letter">N</h1>
+        <h1 class="letter">O</h1>
+        <h1 class="letter">P</h1>
+        <h1 class="letter">Q</h1>
+        <h1 class="letter">R</h1>
+        <h1 class="letter">S</h1>
+        <h1 class="letter">T</h1>
+        <br>
+        <h1 class="letter">U</h1>
+        <h1 class="letter">V</h1>
+        <h1 class="letter">W</h1>
+        <h1 class="letter">X</h1>
+        <h1 class="letter">Y</h1>
+        <h1 class="letter">Z</h1>
+        <h1 class="letter">.</h1>
+        <h1 class="letter">,</h1>
+        <h1 class="letter">-</h1>
+        <h1 class="letter">_</h1>
+        <h1 class="letter">:</h1>
+        <h1 class="letter">;</h1>
+    </div>
+    <br><br>
+    <hr><br><br><br><br><br><br>
+        <section id="intro" class="magmatic">
+            <div id="bigletter">BEBON</div>
+        </section>
+        <section id="sliders">
+            <ul>                   
+                <li data-axes="wdth">
+                    <div class="range-name">Width</div>
+                    <div class="min">100</div>
+                    <input data-type="wdth" class="range axis-range menu" type="range" min="100" max="200" value="100">
+                    <div class="max">200</div>
+                </li>   
+            </ul>
+        </section>
+        <br>
+        <section id="buttons">
+            <button id="regular">Regular</button>
+            <button id="semiwide">Semi-wide</button>
+            <button id="wide">Wide</button>
+            <button id="random">Random</button>
+        </section>
+        <section id="content" class="magmatic">
+            <p>
+                BEBON IS BOTH SHARP AND ROUNDED, BOTH CRUEL AND SOFT. IT MAY NOT BE THE BEST TYPEFACE FOR TEXT, BUT YOU WILL LOVE TO DISPLAY WITH IT.
+            </p>
+        </section>
+        
+        <script>
+            //Make the DIV element draggagle:
+            dragElement(document.getElementById("drag"));
+            
+            function dragElement(elmnt) {
+              var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+              if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+              } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+              }
+            
+              function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+              }
+            
+              function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+              }
+            
+              function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+              }
+            }
+            </script>
+
+    </body>
+</html>
