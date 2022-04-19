@@ -7,7 +7,7 @@ function show_letter()
 
   let ls_slot = $('#ls-slot');
 
-  ls_slot.text("<div id='drag'>" + ls + "</div>");
+  ls_slot.text(ls);
 }
 
 $(document).ready(function() {
@@ -16,7 +16,7 @@ $(document).ready(function() {
   $('button').on('click', function() {
     show_letter();
   });
-
+});
 
 
 // random css
