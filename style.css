@@ -45,6 +45,7 @@ body{
 
 /* dragable element style*/
 /*use class instead of id because there will be multiple*/
+
 #mahjong {
 	display:inline;
 }
@@ -52,8 +53,6 @@ body{
 .block{
 	position: absolute;
 	border-radius: 8px;
-	border: 2px solid silver;
-	box-shadow: 5px 5px silver;
 	text-align: center;
 	padding: 10px;
 	font-family: 'Bebon';
@@ -65,6 +64,10 @@ body{
 	--wdth: 100;
 	background-color: darkgreen;
 	cursor: url('point.png') 10 10,auto;
+	color:white;
+	border: 2px solid white;
+	box-shadow: 5px 5px white;
+	text-shadow: 0px 0px 20px rgb(255, 255, 255,0.3);
 }
 
 /* button style*/
@@ -204,7 +207,7 @@ h4 {
 
 .letter:hover {
 	--wdth: 200;
-	color: rgb(255, 255, 255);
+	color:white;
 	text-shadow: 0px 0px 20px rgb(255, 255, 255,0.2);
 	transition: font-variation-settings .3s ease-in,
 	background-color .3s ease-in, color .3s ease-in;
@@ -216,11 +219,6 @@ hr {
 	margin-left: auto;
 	margin-right: auto;
   }
-
-.magmatic, .magmatic *{
-	font-variation-settings: 'wdth' var(--wdth);
-}
-
 
 .page-flow {
 	width: 97%;
@@ -346,34 +344,32 @@ hr {
 	}
 }
 
-
-
-
-/*
-section{
-	margin: 3rem 0;
-}
-
-#intro{
+#font {
+	padding: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	width: 94%;
 	font-family: 'Bebon';
-	font-size:14vw;
-	line-height: 0.9;
+	line-height: 120%;
 	text-align: center;
+	font-variation-settings: 'wdth' var(--wdth);
+	--wdth: 100;
+	font-size: 6vw;
+	background: darkgreen;
+	border-radius: 16px;
+	outline: none;
+	border: 4px solid silver;
+	padding: 2vw;
+	color:white;
+	text-shadow: 0px 0px 20px rgb(255, 255, 255,0.3);
 }
 
-#content{
-	font-family: 'Bebon';
-	width: 33em;
-	height: 500px;
-	margin: auto;
-	font-weight: 100;
-}
 
-#content p{
-	transition: font-variation-settings 400ms ease-in-out;
-}
 
-SLIDER STYLES
+
+/*SLIDER STYLES*/
 
 #sliders ul{
 	margin: auto;
@@ -383,20 +379,39 @@ SLIDER STYLES
 	justify-content: center;
 }
 
-.range-name, .min, .max{
-	width: 100px;
+.slider {
+	-webkit-appearance: none;
+	position:relative;
+	height: 18px;
+	border: 2px solid silver;
+	border-radius: 5px;
+	background: none;
+	transition: opacity .2s;
+	padding: 2px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 12px;
+	height: 12px;
+	background: white;
+	border-radius: 4px;
+  }
+
+
+.range-name {
+	width: 8vw;
+	margin-right: 20px;
+	line-height: 18px;
 }
-.min{
-	text-align: right;
-}
-.range-name::after{
-	content: ': ';
+.min, .max{
+	width: 3vw;
+	line-height: 18px;
 }
 
 input.axis-range{
-	width: 580px;
+	width: 30vw;
 	margin: 0 20px;
 	cursor: url('point.png') 10 10,auto;
 }
-
-*/

@@ -18,7 +18,9 @@
     </head>
 
     <body>
-    <br>
+        <button id="back" onclick="window.location.href='index.html'" style="margin-top: 15px; margin-left: 15px; float:left; line-height: 20px;"> get back!</button>
+        <button id="contect" onclick="location.href='mailto:cliu07@risd.edu';" style="font-size: 0.9vw; margin-top: 15px; margin-left:auto; margin-right: 15px; float:right; line-height: 24.4px;"> contact me!</button>
+    <br><br><br>
     <h2>glyph collection</h2><br>
     <div id="alphabet">
         <h1 class="letter">A</h1>
@@ -78,7 +80,21 @@
         <div class="specimen-container">
         <h4 style="animation:none;">v</h4><h4>a</h4><h4 style="animation:none;">r</h4><h4>ia</h4><h4 style="animation:none;">bl</h4><h4>e &nbsp</h4><h4 style="animation:none;">f</h4><h4>o</h4><h4 style="animation:none;">nt</h4>
     </div>
-    <br><br>
-        <button id="back" onclick="window.location.href='index.html'">get back!</button>
+    <br><br><hr><br><br>
+    <h2>so… why not try it by yourself?</h2>
+    <h1><div id="font" contenteditable spellcheck="false">type here</div></h1><br>
+    
+    <section id="sliders">
+        <ul><h2>
+            <li data-axes="wdth">
+                <div class="range-name">Width :</div>
+                <div class="min">100</div>
+                <input data-type="wdth" class="range axis-range menu slider" type="range" min="100" max="200" value="100">
+                <div class="max">200</div>
+            </li>   
+        </h2></ul>
+    </section>
+    <br><br><br>
+        <button id="back" onclick="window.location.href='index.html'" style="font-size: 0.8vw;"> or get back here!</button>
     </body>
 </html>

@@ -26,6 +26,7 @@ function show_letter(){
 
   //make it draggable
   $('.draggable').draggable();
+
 }
 
 function generateMixed(n) {
@@ -57,39 +58,9 @@ $(document).ready(function(){
 
 		// console.log("--"+slidertype, value );
 
-		$('#bigletter').css("--"+slidertype, value);
+		$('#font').css("--"+slidertype, value);
 
 	});
-
-	//click buttons
-	$('#regular').click(function(event) {
-		// console.log('default clicked');
-		$("#content").css({
-			"--wdth": 100
-		});	
-	});
-
-	$('#semiwide').click(function(event) {
-		$("#content").css({
-			"--wdth": 150
-		});	
-	});
-
-	$('#wide').click(function(event) {
-		$("#content").css({
-			"--wdth": 200
-		});	
-	});
-
-
-	$('#random').click(function(event) {
-		let randomwidth = randomNumber(100,200);
-		
-		$("#content").css({
-			"--wdth": randomwidth
-		});	
-	});
-
 
 
 });
