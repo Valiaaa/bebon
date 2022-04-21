@@ -27,10 +27,10 @@ body{
 }
 
 /* dragable element style*/
-
-#drag {
+/*use class instead of id because there will be multiple*/
+.block{
 	position: absolute;
-	display: none;
+/*	display: none;*/
 	border-radius: 8px;
 	border: 2px solid silver;
 	box-shadow: 5px 5px silver;
@@ -43,7 +43,7 @@ body{
 	font-weight: normal;
 	text-transform: uppercase;
 	--wdth: 100;
-  }
+}
 
 /* button style*/
 

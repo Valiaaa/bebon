@@ -1,54 +1,43 @@
 // set up the letter set
 var lss = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','.',',',':',';','-','_'];
 
-function show_letter()
-{
+function show_letter(){
+	//gets a random letter
+	//and creates div element with random styling
   let ls = lss[Math.floor(Math.random() * lss.length)];
 
-  let ls_slot = $('#ls-slot');
+  let width = randomNumber(100,200);
+  let x = randomNumber(10,innerWidth-100);
+  let y = randomNumber(10,innerHeight-100);
 
-  ls_slot.text(ls);
+  //create element
+  let ls_slot = $('<div class="block draggable"></div>');
+  //add the random letter
+  ls_slot.text(ls); 
+  //add the css info
+  ls_slot.css({
+  	top: y +'px',
+  	left: x + 'px',
+  	"--wdth": width
+  });
+  
+  //add onto container
+  $('#mahjong').append(ls_slot);
+
+  //make it draggable
+  $('.draggable').draggable();
 }
 
-$(document).ready(function() {
-  show_letter();
+// $(document).ready(function() {
+//   show_letter();
 
-  $('button').on('click', function() {
-    show_letter();
-  });
-});
+//   $('button').on('click', function() {
+//     show_letter();
+//   });
+// });
 
 
 // random css
-
-function update_css(x, y, width)
-{
-  let nl = $('#drag');
-
-  nl.css({
-    left: x + 'px',
-    top: y  + 'px',
-	"--wdth": width
-  });
-}
-
-$(document).ready(function() {
-
-  $('button').click(function() {
-
-	$("#drag").css({
-		"display": "block"
-	});	
-
-    let width = randomNumber(100,200);
-
-    let x = randomNumber(10,innerWidth-100);
-    let y = randomNumber(10,innerHeight-100);
-
-    update_css(x, y, width);
-  });
-
-})
 
 
 
@@ -64,6 +53,16 @@ function generateMixed(n) {
 }
 
 $(document).ready(function(){
+
+	  $('button').click(function() {
+
+	  	show_letter();
+		// $("#drag").css({
+		// 	"display": "block"
+		// });	
+
+
+	  });
 
 	const wdthmax = 200;
 
@@ -116,7 +115,6 @@ $(document).ready(function(){
 	});*/
 
 });
-
 
 
 // Function to generate random number 
