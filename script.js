@@ -7,8 +7,8 @@ function show_letter(){
   let ls = lss[Math.floor(Math.random() * lss.length)];
 
   let width = randomNumber(100,200);
-  let x = randomNumber(10,innerWidth-150);
-  let y = randomNumber(10,innerHeight-150);
+  let x = randomNumber(28*innerWidth/100,66*innerWidth/100);
+  let y = randomNumber(7*innerWidth/100,40*innerWidth/100);
 
   //create element
   let ls_slot = $('<div class="block draggable"></div>');

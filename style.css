@@ -9,6 +9,10 @@
   font-family: 'Bebon';
   src: url('BebonVF.woff') format('woff-variations');
 }
+@font-face {
+	font-family: 'MetamoreBit';
+	src: url('MetamorBit_SerifVF.ttf');
+}
 
 body::-webkit-scrollbar {
 	width: 0.5em;
@@ -55,7 +59,7 @@ body{
 	font-family: 'Bebon';
 	font-variation-settings: 'wdth' var(--wdth);
 	line-height: 100%;
-	font-size: 6vw;
+	font-size: 5vw;
 	font-weight: normal;
 	text-transform: uppercase;
 	--wdth: 100;
@@ -79,8 +83,9 @@ button{
 	margin-left: auto;
 	margin-right: auto;
 	width: 10vw;
-	font-family: 'Arial';
-	font-variation-settings: 'wdth' 100;
+	font-family: 'MetamoreBit';
+	font-variation-settings: 'wdth' var(--wdth);
+	--wdth: 450;
 	font-size: 1vw;
 	color: silver;
 	background: darkgreen;
@@ -116,11 +121,71 @@ button:hover{
 h1 {
 	font-family: Bebon;
 	font-variation-settings: 'wdth' var(--wdth);
-	font-size: 8vw;
+	font-size: 10vw;
 	font-weight: normal;
 	text-transform: uppercase;
 	--wdth: 100;
-	}
+}
+
+h2{
+	display: block;
+	text-align: center;
+	font-family: 'MetamoreBit';
+	font-variation-settings: 'wdth' var(--wdth);
+	--wdth: 450;
+	font-size: 1vw;
+	color: silver;
+}
+
+h3 {
+	font-family: Bebon;
+	font-variation-settings: 'wdth' var(--wdth);
+	line-height: 115%;
+	font-weight: normal;
+	text-transform: uppercase;
+	position: relative;
+	text-align: center;
+	padding: 30px 20px;
+	animation-duration: 7s;
+	animation-name: change;
+	animation-iteration-count: infinite;
+}
+
+h4 {
+	font-family: Bebon;
+	font-variation-settings: 'wdth' var(--wdth);
+	line-height: 115%;
+	font-size: 6vw;
+	font-weight: normal;
+	text-transform: uppercase;
+	display: inline;
+	text-align: center;
+	animation-duration: 7s;
+	animation-name: change;
+	animation-iteration-count: infinite;
+}
+
+@keyframes change {
+  30% {
+	font-variation-settings: 'wdth' var(--wdth);
+    --wdth: 100;
+  }
+
+  45% {
+	font-variation-settings: 'wdth' var(--wdth);
+    --wdth: 200;
+  }
+
+  80% {
+	font-variation-settings: 'wdth' var(--wdth);
+    --wdth: 200;
+  }
+
+  95% {
+	font-variation-settings: 'wdth' var(--wdth);
+    --wdth: 100;
+  }
+}
 
 #alphabet {
 	text-align: center;
@@ -138,6 +203,7 @@ h1 {
 .letter:hover {
 	--wdth: 200;
 	color: rgb(255, 255, 255);
+	text-shadow: 0px 0px 20px rgb(255, 255, 255,0.2);
 	transition: font-variation-settings .3s ease-in,
 	background-color .3s ease-in, color .3s ease-in;
 	}
@@ -153,6 +219,113 @@ hr {
 	font-variation-settings: 'wdth' var(--wdth);
 }
 
+
+.page-flow {
+	width: 97%;
+	display: flex;
+	flex-direction: column;
+}
+
+.left, .right {
+	width: 50%;
+	padding: 25px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  }
+  
+  .left, .left-flow {
+	border-right: 2px solid silver;
+  }
+  
+  .left-flow, .right-flow {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	border-top: 2px solid silver;
+	border-bottom: 2px solid silver;
+  }
+  
+  .specimen-container {
+	margin-left: 3%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+
+  
+  @media screen and (max-width: 1400px) and (min-width: 1100px) {
+	h3 {
+        animation-name: change150;
+    }
+  }
+	
+	@keyframes change150 {
+		30% {
+		  font-variation-settings: 'wdth' var(--wdth);
+		  --wdth: 100;
+		}
+	  
+		45% {
+		  font-variation-settings: 'wdth' var(--wdth);
+		  --wdth: 150;
+		}
+	  
+		80% {
+		  font-variation-settings: 'wdth' var(--wdth);
+		  --wdth: 150;
+		}
+	  
+		95% {
+		  font-variation-settings: 'wdth' var(--wdth);
+		  --wdth: 100;
+		}
+	  }
+
+  @media screen and (max-width: 1100px) and (min-width: 800px) {
+	h3 {
+        animation: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+	.specimen-container {
+		display: block;
+		text-align: center;
+	}
+	h3 {
+        animation: none;
+    }
+	.left, .right {
+		width: 100%;
+	  }
+	  
+	  .left, .left-flow {
+		border-right: none;
+	  }
+	  
+	  .left-flow {
+		width: 100%;
+		border-top: 2px solid silver;
+		border-bottom: 2px solid silver;
+	  }
+
+	  .right-flow {
+		width: 100%;
+		border-top: none;
+		border-bottom: 2px solid silver;
+	  }
+	  h2 {
+		  margin-top: 0px !important;
+	  }
+}
+
+
+
+
+/*
 section{
 	margin: 3rem 0;
 }
@@ -176,7 +349,7 @@ section{
 	transition: font-variation-settings 400ms ease-in-out;
 }
 
-/*SLIDER STYLES*/
+SLIDER STYLES
 
 #sliders ul{
 	margin: auto;
@@ -201,3 +374,5 @@ input.axis-range{
 	margin: 0 20px;
 	cursor: url('point.png') 10 10,auto;
 }
+
+*/
