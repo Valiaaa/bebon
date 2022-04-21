@@ -262,6 +262,14 @@ hr {
 	h3 {
         animation-name: change150;
     }
+
+	button{
+		border: 4px solid silver;
+		border-radius: 12px;
+	}
+	button:hover{
+		border: 4px solid darkgreen;
+	}
   }
 	
 	@keyframes change150 {
@@ -290,6 +298,13 @@ hr {
 	h3 {
         animation: none;
     }
+	button{
+		border: 3px solid silver;
+		border-radius: 9px;
+	}
+	button:hover{
+		border: 3px solid darkgreen;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -322,6 +337,13 @@ hr {
 	  h2 {
 		  margin-top: 0px !important;
 	  }
+	  button{
+		border: 2px solid silver;
+		border-radius: 7px;
+	}
+	button:hover{
+		border: 2px solid darkgreen;
+	}
 }
 
 
