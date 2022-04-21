@@ -7,8 +7,8 @@ function show_letter(){
   let ls = lss[Math.floor(Math.random() * lss.length)];
 
   let width = randomNumber(100,200);
-  let x = randomNumber(10,innerWidth-100);
-  let y = randomNumber(10,innerHeight-100);
+  let x = randomNumber(10,innerWidth-150);
+  let y = randomNumber(10,innerHeight-150);
 
   //create element
   let ls_slot = $('<div class="block draggable"></div>');
@@ -28,21 +28,6 @@ function show_letter(){
   $('.draggable').draggable();
 }
 
-// $(document).ready(function() {
-//   show_letter();
-
-//   $('button').on('click', function() {
-//     show_letter();
-//   });
-// });
-
-
-// random css
-
-
-
-
-
 function generateMixed(n) {
      var res = "";
      for(var i = 0; i < n ; i ++) {
@@ -54,13 +39,9 @@ function generateMixed(n) {
 
 $(document).ready(function(){
 
-	  $('button').click(function() {
+	  $('#moreblocks').click(function() {
 
 	  	show_letter();
-		// $("#drag").css({
-		// 	"display": "block"
-		// });	
-
 
 	  });
 
@@ -109,10 +90,7 @@ $(document).ready(function(){
 		});	
 	});
 
-	/*$('.pic').click (function appendText(){
-		var txt=$("<h2></h2>").text(res);
-		$("#drag").append(txt);
-	});*/
+
 
 });
 

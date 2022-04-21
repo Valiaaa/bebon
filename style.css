@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background-color: darkgreen;
 	cursor: url('hand.png') 10 10,auto;
 }
 
@@ -10,6 +9,19 @@
   font-family: 'Bebon';
   src: url('BebonVF.woff') format('woff-variations');
 }
+
+body::-webkit-scrollbar {
+	width: 0.5em;
+  }
+   
+  body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+	background-color: darkgrey;
+	outline: 1px solid slategrey;
+  }
 
 :root{
 	--wdth: 100;
@@ -24,13 +36,17 @@ body{
 	line-height: 1.5;
 	margin-bottom: 4rem;
 	color:  var(--color);
+	background-color: darkgreen;
 }
 
 /* dragable element style*/
 /*use class instead of id because there will be multiple*/
+#mahjong {
+	display:inline;
+}
+
 .block{
 	position: absolute;
-/*	display: none;*/
 	border-radius: 8px;
 	border: 2px solid silver;
 	box-shadow: 5px 5px silver;
@@ -43,21 +59,60 @@ body{
 	font-weight: normal;
 	text-transform: uppercase;
 	--wdth: 100;
+	background-color: darkgreen;
 }
 
 /* button style*/
+.pic {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 48vw;
+	user-select: none;
+}
 
-button {
-	font-size: 4rem;
-	color:black;
-	border: solid 2px;
-	padding: 1rem;
+#buttons{
+	text-align: center;
 }
-button:hover {
-	background-color: black;
-	color:white;
+button{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 10vw;
+	font-family: 'Arial';
+	font-variation-settings: 'wdth' 100;
+	font-size: 1vw;
+	color: silver;
+	background: darkgreen;
+	border-radius: 16px;
+	outline: none;
+	border: 6px solid silver;
+	padding: 1em;
 }
-  
+button:hover{
+	cursor: url('point.png') 10 10,auto;
+	color: darkgreen;
+	background: silver;
+	border: 6px solid darkgreen;
+}
+
+#moreblocks {
+	display: flex;
+	margin-top: -26.5vw;
+}
+
+#explore {
+	display: block;
+	margin-top: 24vw;
+}
+
+#back {
+	display: block;
+}
+
+
+
+
 h1 {
 	font-family: Bebon;
 	font-variation-settings: 'wdth' var(--wdth);
@@ -87,13 +142,6 @@ h1 {
 	background-color .3s ease-in, color .3s ease-in;
 	}
 
-.pic {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 48vw;
-  }
-
 hr {
 	width:94vw;
 	display: block;
@@ -107,10 +155,6 @@ hr {
 
 section{
 	margin: 3rem 0;
-}
-
-#mahjong {
-	display:inline;
 }
 
 #intro{
@@ -155,25 +199,5 @@ section{
 input.axis-range{
 	width: 580px;
 	margin: 0 20px;
-}
-
-
-/*BUTTON STYLES*/
-
-#buttons{
-	text-align: center;
-}
-button{
-	font-family: 'Arial';
-	font-variation-settings: 'wdth' 100;
-	font-size: 1em;
-	background: white;
-	border-radius: 50%;
-	outline: none;
-	border: 2px solid black;
-	padding: 1em;
-}
-button:hover{
-	color: olivedrab;
-	/*cursor: pointer;*/
+	cursor: url('point.png') 10 10,auto;
 }
