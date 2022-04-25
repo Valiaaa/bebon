@@ -364,6 +364,7 @@ hr {
 	padding: 2vw;
 	color:white;
 	text-shadow: 0px 0px 20px rgb(255, 255, 255,0.3);
+	cursor: url('point.png') 10 10,auto;
 }
 
 
