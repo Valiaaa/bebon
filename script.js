@@ -7,8 +7,12 @@ function show_letter(){
   let ls = lss[Math.floor(Math.random() * lss.length)];
 
   let width = randomNumber(100,200);
-  let x = randomNumber(28*innerWidth/100,66*innerWidth/100);
-  let y = randomNumber(7*innerWidth/100,40*innerWidth/100);
+  let picWidth = $(".pic").width();
+  let pos = $(".pic").position();
+pos.top;  // top offset position
+pos.left; // left offset position
+  let x = randomNumber(pos.left+10 , pos.left+picWidth-100);
+  let y = randomNumber(pos.top , pos.top+picWidth-100);
 
   //create element
   let ls_slot = $('<div class="block draggable"></div>');
@@ -20,6 +24,8 @@ function show_letter(){
   	left: x + 'px',
   	"--wdth": width
   });
+
+  console.log("y loving it??");
   
   //add onto container
   $('#mahjong').append(ls_slot);

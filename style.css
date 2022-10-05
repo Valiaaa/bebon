@@ -71,12 +71,16 @@ body{
 }
 
 /* button style*/
-.pic {
+.con {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 48vw;
+}
+
+.pic {
 	user-select: none;
+	width: 100%;
 }
 
 #buttons{
@@ -268,14 +272,14 @@ hr {
 	button:hover{
 		border: 4px solid darkgreen;
 	}
-	.pic {
+	.con {
 		width: 56vw;
 	}
 	#moreblocks {
-		margin-top: -30vw;
+		margin-top: -31vw;
 	}
 	#explore {
-		margin-top: 30vw;
+		margin-top: 31vw;
 	}
   }
 	
@@ -314,7 +318,7 @@ hr {
 	button:hover{
 		border: 4px solid darkgreen;
 	}
-	.pic {
+	.con {
 		width: 72vw;
 	}
 	#moreblocks {
@@ -367,7 +371,7 @@ hr {
 	button:hover{
 		border: 3px solid darkgreen;
 	}
-	.pic {
+	.con {
 		width: 90vw;
 	}
 	#moreblocks {
