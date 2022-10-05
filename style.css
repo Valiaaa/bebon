@@ -323,6 +323,9 @@ hr {
 	#explore {
 		margin-top: 40vw;
 	}
+	.block {
+		font-size: 7vw;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -372,6 +375,9 @@ hr {
 	}
 	#explore {
 		margin-top: 70vw;
+	}
+	.block {
+		font-size: 10vw;
 	}
 }
 
